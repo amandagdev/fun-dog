@@ -1,12 +1,13 @@
 .doglist {
   display: flex;
-  flex: 1 1 calc(17% - 10px);
-  margin-bottom: 10px;
+  flex: 1 1 calc(20% - 10px);
   border-radius: 4px;
-  max-width: 100%;
+  margin: 0 10px 10px 10px;
+  min-width: 200px;
 }
 
 .doglist img {
-  width: 200px;
+  width: 100%;
   height: 200px;
+  display: block;
 }
