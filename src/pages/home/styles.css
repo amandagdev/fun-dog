@@ -1,0 +1,27 @@
+.header {
+  font-weight: bold;
+  height: 80px;
+  box-shadow: 0 0 1px 0 #555;
+  padding: 10px 15px 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__image img {
+  width: 60px;
+  height: 60px;
+}
+
+.header__name {
+  font-size: 20px;
+}
+
+.container {
+  height: 100vh;
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}

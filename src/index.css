@@ -11,11 +11,12 @@ h4,
 h5,
 p {
   margin: 0;
+  color: #555;
 }
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 html,
