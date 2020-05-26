@@ -25,3 +25,15 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.container__select {
+  width: 100%;
+  padding: 40px 10px 40px 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.container__dogs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
