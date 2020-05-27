@@ -1,7 +1,11 @@
 import React from 'react';
 import './styles.css';
 
-export default function Select({ options, onChange, initial = 'Selecione' }) {
+export default function Select({
+  options = [],
+  onChange,
+  initial = 'Selecione',
+}) {
   return (
     <>
       <select onChange={onChange}>
