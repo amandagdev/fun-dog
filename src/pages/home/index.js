@@ -97,7 +97,11 @@ export default function Home() {
             )
           ) : !!loading ? (
             breedsDogs.map((item, index) => (
-              <DogList onClick={modalToggle} key={index} dog={item} />
+              <DogList
+                onClick={() => modalToggle(item)}
+                key={index}
+                dog={item}
+              />
             ))
           ) : (
             <Loading />
