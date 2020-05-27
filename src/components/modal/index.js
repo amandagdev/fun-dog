@@ -19,12 +19,14 @@ export default function Modal({
             x
           </button>
           <div className="modal__element">
-            <img src={modalItem} alt="dogs" />
-            <div
-              className="nameDog"
-              style={{ fontFamily: `'${dados.font}'`, color: dados.color }}
-            >
-              {dados.name}
+            <div className="modal__element__itens">
+              <img src={modalItem} alt="dogs" />
+              <div
+                className="nameDog"
+                style={{ fontFamily: `'${dados.font}'`, color: dados.color }}
+              >
+                {dados.name}
+              </div>
             </div>
           </div>
           <div className="modal__element">
