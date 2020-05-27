@@ -6,11 +6,10 @@ export default function Modal({
   modalRef,
   onClick,
   modalItem,
-  onChange,
   handleModalButton,
-  formRef,
+  dados,
+  handleModal,
 }) {
-  const colors = ['cinza', 'azul', 'preto', 'branco', 'salmão'];
   const fonts = ['Exo 2', 'Inconsolata', 'Montserrat', 'Open Sans', 'Roboto'];
   return (
     <>
@@ -21,16 +20,34 @@ export default function Modal({
           </button>
           <div className="modal__element">
             <img src={modalItem} alt="dogs" />
-            <div ref={formRef} className="nameDog"></div>
+            <div
+              className="nameDog"
+              style={{ fontFamily: `'${dados.font}'`, color: dados.color }}
+            >
+              {dados.name}
+            </div>
           </div>
           <div className="modal__element">
-            <form onChange={onChange}>
+            <form onChange={handleModal}>
               <label htmlFor="name">Nome</label>
               <input type="text" name="name" required />
               <label htmlFor="color">Cor da fonte</label>
-              <Select id="color" name="color" options={colors} />
-              <label htmlFor="fontFamily">Fonte</label>
-              <Select id="fontFamily" name="fontFamily" options={fonts} />
+              <select id="color" name="color">
+                <option value="#000">Selecione</option>
+                <option value="rgb(177, 175, 175)">Cinza</option>
+                <option value="rgb(82, 123, 197)">Azul</option>
+                <option value="rgb(84, 192, 84)">Verde</option>
+                <option value="#fff">Branco</option>
+                <option value="#f79e8c">Salmão</option>
+              </select>
+
+              <label htmlFor="font">Fonte</label>
+              <Select
+                id="font"
+                name="font"
+                options={fonts}
+                initial="Selecione"
+              />
               <button
                 className="buttonTeste"
                 onClick={handleModalButton}

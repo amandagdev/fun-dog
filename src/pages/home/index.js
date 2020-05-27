@@ -18,6 +18,7 @@ export default function Home() {
   const modalRef = useRef(null);
   const [modalItem, setModalItem] = useState([]);
   const formRef = useRef(null);
+  const [dados, setDados] = useState({ name: '', color: '', font: '' });
 
   async function getDog() {
     try {
@@ -53,6 +54,7 @@ export default function Home() {
   const modalToggle = (item) => {
     setModal((toggle) => !toggle);
     setModalItem(item);
+    setDados({ name: '', color: '', font: '' });
     document.body.addEventListener('click', outOfModal);
   };
 
@@ -60,7 +62,13 @@ export default function Home() {
     if (e.target === modalRef.current) modalToggle(e);
   };
 
-  const handleModal = (e) => {};
+  const handleModal = (e) => {
+    e.preventDefault();
+    const name = e.target.name;
+    const value = e.target.value;
+
+    setDados({ ...dados, [name]: value });
+  };
 
   const handleModalButton = (e) => {};
 
@@ -118,9 +126,9 @@ export default function Home() {
             modalRef={modalRef}
             onClick={modalToggle}
             modalItem={modalItem}
-            onChange={handleModal}
             handleModalButton={handleModalButton}
-            formRef={formRef}
+            dados={dados}
+            handleModal={handleModal}
           />
         )}
       </div>
