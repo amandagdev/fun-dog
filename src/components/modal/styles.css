@@ -19,6 +19,18 @@
   min-width: 300px;
   display: flex;
   width: 70%;
+  height: 90vh;
+}
+
+.modal__element {
+  width: 50%;
+  height: 70vh;
+  padding: 10px;
+}
+
+.modal__element img {
+  width: 100%;
+  height: 100%;
 }
 
 .close {
@@ -33,13 +45,13 @@
   color: #555;
 }
 
-.modal__element {
-  width: 50%;
-  height: 70vh;
-  padding: 10px;
-}
-
-.modal__element img {
-  width: 100%;
-  height: 100%;
+@media (max-width: 820px) {
+  .modal__content {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .modal__element {
+    width: 100%;
+    height: 50vh;
+  }
 }
