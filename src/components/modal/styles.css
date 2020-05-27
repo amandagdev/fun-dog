@@ -124,12 +124,3 @@
     margin: 10px 0 10px 0;
   }
 }
-
-@media (max-width: 375px) {
-  .modal__content {
-    height: 80%;
-  }
-  .modal__element {
-    height: 50%;
-  }
-}
