@@ -5,17 +5,20 @@ import DogList from '../../components/dogList';
 import api from '../../services/api';
 import Loading from '../../components/loading';
 import Select from '../../components/select';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [dog, setDog] = useState([]);
   const [loading, setLoading] = useState(false);
   const [breeds, setBreeds] = useState([]);
+  const [changeBreed, setChangeBreed] = useState('');
+  const [breedsDogs, setBreedsDogs] = useState([]);
 
   async function getDog() {
     try {
       setLoading(false);
       const responseDog = await api.get('/breeds/image/random/50');
-      const responseBreeds = await api.get('breeds/list/all');
+      const responseBreeds = await api.get('/breeds/list/all');
       const responseAll = await Promise.all([responseDog, responseBreeds]);
       setDog(responseAll[0].data.message);
       setBreeds(responseAll[1].data.message);
@@ -25,29 +28,56 @@ export default function Home() {
     }
   }
 
+  const breedsName = Object.keys(breeds);
+
+  useEffect(() => {
+    async function handleBreeds() {
+      try {
+        setLoading(false);
+        if (!changeBreed) return;
+        const response = await api.get(`/breed/${changeBreed}/images`);
+        setBreedsDogs(response.data.message);
+        setLoading(true);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    handleBreeds();
+  }, [changeBreed]);
+
+  console.log(changeBreed);
   useEffect(() => {
     getDog();
   }, []);
-
-  const breedsName = Object.keys(breeds);
 
   return (
     <>
       <div className="header">
         <div className="header__image">
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div className="header__name">funDog</div>
       </div>
       <div className="container">
         <div className="container__select">
-          {!!loading ? <Select options={breedsName} /> : <Loading />}
+          <Select
+            onChange={(e) => setChangeBreed(e.target.value)}
+            options={breedsName}
+          />
         </div>
         <div className="container__dogs">
-          {!!loading ? (
-            dog.map((item, index) => {
-              return <DogList key={index} dog={item} />;
-            })
+          {!changeBreed ? (
+            !!loading ? (
+              dog.map((item, index) => {
+                return <DogList key={index} dog={item} />;
+              })
+            ) : (
+              <Loading />
+            )
+          ) : !!loading ? (
+            breedsDogs.map((item, index) => <DogList key={index} dog={item} />)
           ) : (
             <Loading />
           )}
