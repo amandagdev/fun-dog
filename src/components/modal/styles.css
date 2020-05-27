@@ -39,7 +39,7 @@
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 16rem;
+  top: 90%;
 }
 
 .modal__element .modal__element__itens img {
@@ -123,10 +123,6 @@
   .modal__content .modal__element button {
     margin: 10px 0 10px 0;
   }
-
-  .modal__element .modal__element__itens .nameDog {
-    top: 11rem;
-  }
 }
 
 @media (max-width: 590px) {
@@ -135,15 +131,6 @@
   }
   .modal__element {
     height: 38vh;
-  }
-  .modal__element .modal__element__itens .nameDog {
-    top: 13rem;
-  }
-}
-
-@media (max-width: 414px) {
-  .modal__element .modal__element__itens .nameDog {
-    top: 14rem;
   }
 }
 
@@ -162,8 +149,5 @@
   }
   .modal__element {
     height: 45vh;
-  }
-  .modal__element .modal__element__itens .nameDog {
-    top: 13rem;
   }
 }
