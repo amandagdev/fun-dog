@@ -105,11 +105,11 @@
   .modal__content {
     flex-direction: column;
     padding: 10px;
-    height: 80%;
+    height: 90%;
   }
   .modal__element {
     width: 100%;
-    height: 40vh;
+    height: 50%;
   }
 
   .modal__content .modal__element input {
@@ -125,29 +125,11 @@
   }
 }
 
-@media (max-width: 590px) {
-  .modal__content {
-    height: 78%;
-  }
-  .modal__element {
-    height: 38vh;
-  }
-}
-
 @media (max-width: 375px) {
   .modal__content {
     height: 80%;
   }
   .modal__element {
-    height: 40vh;
-  }
-}
-
-@media (max-width: 320px) {
-  .modal__content {
-    height: 90%;
-  }
-  .modal__element {
-    height: 45vh;
+    height: 50%;
   }
 }
