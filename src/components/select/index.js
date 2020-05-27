@@ -4,11 +4,13 @@ import './styles.css';
 export default function Select({
   options = [],
   onChange,
-  initial = 'Selecione',
+  initial,
+  id = '',
+  name = '',
 }) {
   return (
     <>
-      <select onChange={onChange}>
+      <select id={id} name={name} onChange={onChange}>
         <option value={initial}>{initial}</option>
         {options.map((item) => {
           return (

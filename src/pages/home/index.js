@@ -17,6 +17,7 @@ export default function Home() {
   const [modal, setModal] = useState(false);
   const modalRef = useRef(null);
   const [modalItem, setModalItem] = useState([]);
+  const formRef = useRef(null);
 
   async function getDog() {
     try {
@@ -59,6 +60,10 @@ export default function Home() {
     if (e.target === modalRef.current) modalToggle(e);
   };
 
+  const handleModal = (e) => {};
+
+  const handleModalButton = (e) => {};
+
   useEffect(() => {
     getDog();
   }, []);
@@ -78,6 +83,7 @@ export default function Home() {
           <Select
             onChange={(e) => setChangeBreed(e.target.value)}
             options={breedsName}
+            initial="Todos"
           />
         </div>
         <div className="container__dogs">
@@ -112,6 +118,9 @@ export default function Home() {
             modalRef={modalRef}
             onClick={modalToggle}
             modalItem={modalItem}
+            onChange={handleModal}
+            handleModalButton={handleModalButton}
+            formRef={formRef}
           />
         )}
       </div>
