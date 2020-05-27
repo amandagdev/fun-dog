@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './styles.css';
 import logo from '../../assets/images/logo.PNG';
 import DogList from '../../components/dogList';
@@ -6,6 +6,7 @@ import api from '../../services/api';
 import Loading from '../../components/loading';
 import Select from '../../components/select';
 import { Link } from 'react-router-dom';
+import Modal from '../../components/modal';
 
 export default function Home() {
   const [dog, setDog] = useState([]);
@@ -13,6 +14,8 @@ export default function Home() {
   const [breeds, setBreeds] = useState([]);
   const [changeBreed, setChangeBreed] = useState('');
   const [breedsDogs, setBreedsDogs] = useState([]);
+  const [modal, setModal] = useState(false);
+  const modalRef = useRef(null);
 
   async function getDog() {
     try {
@@ -45,13 +48,22 @@ export default function Home() {
     handleBreeds();
   }, [changeBreed]);
 
-  console.log(changeBreed);
+  const modalToggle = () => {
+    setModal((toggle) => !toggle);
+    document.body.addEventListener('click', outOfModal);
+  };
+
+  const outOfModal = (e) => {
+    if (e.target === modalRef.current) modalToggle(e);
+  };
+
   useEffect(() => {
     getDog();
   }, []);
 
   return (
     <>
+      <button onClick={modalToggle}>OLA</button>
       <div className="header">
         <div className="header__image">
           <Link to="/">
@@ -82,6 +94,7 @@ export default function Home() {
             <Loading />
           )}
         </div>
+        {modal && <Modal modalRef={modalRef} onClick={modalToggle} />}
       </div>
     </>
   );
