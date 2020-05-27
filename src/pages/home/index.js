@@ -16,6 +16,7 @@ export default function Home() {
   const [breedsDogs, setBreedsDogs] = useState([]);
   const [modal, setModal] = useState(false);
   const modalRef = useRef(null);
+  const [modalItem, setModalItem] = useState([]);
 
   async function getDog() {
     try {
@@ -48,8 +49,9 @@ export default function Home() {
     handleBreeds();
   }, [changeBreed]);
 
-  const modalToggle = () => {
+  const modalToggle = (item) => {
     setModal((toggle) => !toggle);
+    setModalItem(item);
     document.body.addEventListener('click', outOfModal);
   };
 
@@ -63,7 +65,6 @@ export default function Home() {
 
   return (
     <>
-      <button onClick={modalToggle}>OLA</button>
       <div className="header">
         <div className="header__image">
           <Link to="/">
@@ -83,18 +84,32 @@ export default function Home() {
           {!changeBreed ? (
             !!loading ? (
               dog.map((item, index) => {
-                return <DogList key={index} dog={item} />;
+                return (
+                  <DogList
+                    onClick={() => modalToggle(item)}
+                    key={index}
+                    dog={item}
+                  />
+                );
               })
             ) : (
               <Loading />
             )
           ) : !!loading ? (
-            breedsDogs.map((item, index) => <DogList key={index} dog={item} />)
+            breedsDogs.map((item, index) => (
+              <DogList onClick={modalToggle} key={index} dog={item} />
+            ))
           ) : (
             <Loading />
           )}
         </div>
-        {modal && <Modal modalRef={modalRef} onClick={modalToggle} />}
+        {modal && (
+          <Modal
+            modalRef={modalRef}
+            onClick={modalToggle}
+            modalItem={modalItem}
+          />
+        )}
       </div>
     </>
   );
