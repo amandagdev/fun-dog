@@ -1,6 +1,5 @@
 .dogs {
   width: 85%;
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
