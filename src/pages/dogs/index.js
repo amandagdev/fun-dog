@@ -14,7 +14,9 @@ export default function Dogs() {
             return <DogList key={index} dog={item.photo} infos={item} />;
           })
         ) : (
-          <Loading initial="SEM DOGS" />
+          <div className="dogs__not">
+            <span>sem dog</span>
+          </div>
         )}
       </div>
     </>

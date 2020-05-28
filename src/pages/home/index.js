@@ -20,7 +20,7 @@ export default function Home() {
   async function getDog() {
     try {
       setLoading(false);
-      const responseDog = await api.get('/breeds/image/random/50');
+      const responseDog = await api.get('/breeds/image/random/48');
       const responseBreeds = await api.get('/breeds/list/all');
       const responseAll = await Promise.all([responseDog, responseBreeds]);
       setDog(responseAll[0].data.message);

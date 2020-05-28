@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-export default function dogList({ dog, onClick, infos = '' }) {
+export default function dogList({ dog, onClick, infos = '', loading }) {
   return (
     <>
       <div className="doglist">

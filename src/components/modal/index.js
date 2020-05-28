@@ -19,7 +19,7 @@ export default function Modal({
           <button className="close" onClick={onClick}>
             x
           </button>
-          {dogSaved ? (
+          {!dogSaved ? (
             <>
               <div className="modal__element">
                 <div className="modal__element__itens">
@@ -43,8 +43,8 @@ export default function Modal({
                   <select id="color" name="color">
                     <option value="#000">Selecione</option>
                     <option value="rgb(177, 175, 175)">Cinza</option>
-                    <option value="rgb(82, 123, 197)">Azul</option>
-                    <option value="rgb(84, 192, 84)">Verde</option>
+                    <option value="rgb(58, 97, 170)">Azul</option>
+                    <option value="rgb(37, 153, 37)">Verde</option>
                     <option value="#fff">Branco</option>
                     <option value="#f79e8c">Salmão</option>
                   </select>

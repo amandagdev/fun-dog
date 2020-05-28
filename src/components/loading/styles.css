@@ -2,6 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100%;
+  height: 100%;
+}
+
+.loading div {
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,19 +1,24 @@
 .container {
-  height: 100vh;
+  height: 100%;
   width: 85%;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 20px 0;
   display: flex;
   flex-wrap: wrap;
 }
 
 .container__select {
   width: 100%;
-  padding: 40px 10px 40px 10px;
+  padding: 20px 10px 30px 10px;
   display: flex;
   justify-content: flex-end;
 }
+
+.container__select select {
+  height: 25px;
+}
 .container__dogs {
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
