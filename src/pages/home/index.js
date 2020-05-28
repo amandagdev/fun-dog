@@ -95,7 +95,7 @@ export default function Home() {
         </div>
         <div className="container__dogs">
           {!changeBreed ? (
-            !loading ? (
+            !!loading ? (
               dog.map((item, index) => {
                 return (
                   <DogList
