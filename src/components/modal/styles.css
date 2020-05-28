@@ -20,6 +20,7 @@
   display: flex;
   width: 50%;
   height: 60vh;
+  border-radius: 4px;
 }
 
 .modal__element {
