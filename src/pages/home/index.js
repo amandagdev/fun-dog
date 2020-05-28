@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './styles.css';
-import logo from '../../assets/images/logo.PNG';
 import DogList from '../../components/dogList';
 import api from '../../services/api';
 import Loading from '../../components/loading';
 import Select from '../../components/select';
-import { Link } from 'react-router-dom';
 import Modal from '../../components/modal';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [dog, setDog] = useState([]);
@@ -16,9 +15,14 @@ export default function Home() {
   const [breedsDogs, setBreedsDogs] = useState([]);
   const [modal, setModal] = useState(false);
   const modalRef = useRef(null);
-  const [modalItem, setModalItem] = useState([]);
-  const formRef = useRef(null);
-  const [dados, setDados] = useState({ name: '', color: '', font: '' });
+  const [dados, setDados] = useState([
+    {
+      name: '',
+      color: '',
+      font: '',
+      photo: null,
+    },
+  ]);
 
   async function getDog() {
     try {
@@ -53,8 +57,7 @@ export default function Home() {
 
   const modalToggle = (item) => {
     setModal((toggle) => !toggle);
-    setModalItem(item);
-    setDados({ name: '', color: '', font: '' });
+    setDados({ name: '', color: '', font: '', photo: item });
     document.body.addEventListener('click', outOfModal);
   };
 
@@ -70,7 +73,12 @@ export default function Home() {
     setDados({ ...dados, [name]: value });
   };
 
-  const handleModalButton = (e) => {};
+  const handleModalButton = (e) => {
+    e.preventDefault();
+    localStorage.setItem('dogs', JSON.stringify(dados));
+  };
+
+  console.log(dados);
 
   useEffect(() => {
     getDog();
@@ -78,15 +86,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="header">
-        <div className="header__image">
-          <Link to="/">
-            <img src={logo} alt="logo" />
-          </Link>
-        </div>
-        <div className="header__name">funDog</div>
-      </div>
       <div className="container">
+        <button>
+          <Link to="/dogs">DOGS</Link>
+        </button>
         <div className="container__select">
           <Select
             onChange={(e) => setChangeBreed(e.target.value)}
@@ -125,7 +128,6 @@ export default function Home() {
           <Modal
             modalRef={modalRef}
             onClick={modalToggle}
-            modalItem={modalItem}
             handleModalButton={handleModalButton}
             dados={dados}
             handleModal={handleModal}

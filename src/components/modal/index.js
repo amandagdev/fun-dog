@@ -5,7 +5,6 @@ import Select from '../select';
 export default function Modal({
   modalRef,
   onClick,
-  modalItem,
   handleModalButton,
   dados,
   handleModal,
@@ -20,7 +19,7 @@ export default function Modal({
           </button>
           <div className="modal__element">
             <div className="modal__element__itens">
-              <img src={modalItem} alt="dogs" />
+              <img src={dados.photo} alt="dogs" />
               <div
                 className="nameDog"
                 style={{ fontFamily: `'${dados.font}'`, color: dados.color }}
