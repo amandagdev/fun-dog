@@ -41,6 +41,7 @@
   width: 100%;
   text-align: center;
   top: 90%;
+  font-weight: bold;
 }
 
 .modal__element .modal__element__itens img {

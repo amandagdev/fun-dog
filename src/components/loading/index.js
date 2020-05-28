@@ -6,9 +6,7 @@ export default function loading() {
   return (
     <>
       <div className="loading">
-        <div>
-          <FaSpinner className="loading" color="#555" size={30} />
-        </div>
+        <FaSpinner className="loading__animation" color="#555" size={30} />
       </div>
     </>
   );

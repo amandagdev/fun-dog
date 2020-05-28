@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.loading div {
+.loading__animation {
   animation: spinner 1s linear infinite;
 }
 
