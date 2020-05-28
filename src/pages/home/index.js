@@ -15,6 +15,7 @@ export default function Home() {
   const [modal, setModal] = useState(false);
   const modalRef = useRef(null);
   const [dados, setDados] = useState([]);
+  const [dogSaved, setDogSaved] = useState(false);
 
   async function getDog() {
     try {
@@ -50,6 +51,7 @@ export default function Home() {
   const modalToggle = (item) => {
     setModal((toggle) => !toggle);
     setDados({ name: '', color: '', font: '', photo: item });
+    setDogSaved(false);
     document.body.addEventListener('click', outOfModal);
   };
 
@@ -70,9 +72,11 @@ export default function Home() {
     const getDogs = JSON.parse(localStorage.getItem('dogs'));
     if (getDogs) {
       localStorage.setItem('dogs', JSON.stringify([...getDogs, dados]));
-    } else {
-      localStorage.setItem('dogs', JSON.stringify([dados]));
+      setDogSaved(true);
+      return;
     }
+    localStorage.setItem('dogs', JSON.stringify([dados]));
+    setDogSaved(true);
   };
 
   useEffect(() => {
@@ -123,6 +127,7 @@ export default function Home() {
             handleModalButton={handleModalButton}
             dados={dados}
             handleModal={handleModal}
+            dogSaved={dogSaved}
           />
         )}
       </div>

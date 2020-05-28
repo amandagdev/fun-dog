@@ -101,6 +101,29 @@
   background-color: #e0e0e0;
 }
 
+.modal__saved {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__saved span {
+  color: rgb(35, 192, 106);
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.modal__saved a {
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+  font-size: 23px;
+}
+
 @media (max-width: 980px) {
   .modal__content {
     flex-direction: column;
