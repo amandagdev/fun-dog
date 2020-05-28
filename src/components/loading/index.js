@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.css';
 
-export default function loading() {
+export default function loading({ initial = 'Carregando' }) {
   return (
     <>
-      <div className="loading">Carregando</div>
+      <div className="loading">{initial}</div>
     </>
   );
 }

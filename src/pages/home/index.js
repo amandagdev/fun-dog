@@ -5,7 +5,6 @@ import api from '../../services/api';
 import Loading from '../../components/loading';
 import Select from '../../components/select';
 import Modal from '../../components/modal';
-import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [dog, setDog] = useState([]);
@@ -15,14 +14,7 @@ export default function Home() {
   const [breedsDogs, setBreedsDogs] = useState([]);
   const [modal, setModal] = useState(false);
   const modalRef = useRef(null);
-  const [dados, setDados] = useState([
-    {
-      name: '',
-      color: '',
-      font: '',
-      photo: null,
-    },
-  ]);
+  const [dados, setDados] = useState([]);
 
   async function getDog() {
     try {
@@ -75,10 +67,13 @@ export default function Home() {
 
   const handleModalButton = (e) => {
     e.preventDefault();
-    localStorage.setItem('dogs', JSON.stringify(dados));
+    const getDogs = JSON.parse(localStorage.getItem('dogs'));
+    if (getDogs) {
+      localStorage.setItem('dogs', JSON.stringify([...getDogs, dados]));
+    } else {
+      localStorage.setItem('dogs', JSON.stringify([dados]));
+    }
   };
-
-  console.log(dados);
 
   useEffect(() => {
     getDog();

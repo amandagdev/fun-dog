@@ -20,6 +20,7 @@
   top: 85%;
   width: 87%;
   text-align: center;
+  font-size: 23px;
 }
 
 @media (max-width: 760px) {
