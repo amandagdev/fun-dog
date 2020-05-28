@@ -1,17 +1,7 @@
 .dogs {
-  padding: 40px;
-}
-
-.dogs__infos {
-  position: relative;
-  min-width: 200px;
-  max-width: 267px;
-}
-
-.dogs__name {
-  margin: 0 10px 0 10px;
-  position: absolute;
-  top: 90%;
-  width: 87%;
-  text-align: center;
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 40px 0;
 }

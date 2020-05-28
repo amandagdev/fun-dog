@@ -9,15 +9,7 @@ export default function Dogs() {
   return (
     <>
       <div className="dogs">
-        <div className="dogs__infos">
-          <DogList dog={dogs.photo} />
-          <div
-            className="dogs__name"
-            style={{ fontFamily: `'${dogs.font}'`, color: dogs.color }}
-          >
-            {dogs.name}
-          </div>
-        </div>
+        <DogList dog={dogs.photo} infos={dogs} />
       </div>
     </>
   );

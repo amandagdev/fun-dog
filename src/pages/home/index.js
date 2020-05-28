@@ -87,9 +87,6 @@ export default function Home() {
   return (
     <>
       <div className="container">
-        <button>
-          <Link to="/dogs">DOGS</Link>
-        </button>
         <div className="container__select">
           <Select
             onChange={(e) => setChangeBreed(e.target.value)}
