@@ -14,7 +14,7 @@ export default function Home() {
   const [breedsDogs, setBreedsDogs] = useState([]);
   const [modal, setModal] = useState(false);
   const modalRef = useRef(null);
-  const [dados, setDados] = useState([]);
+  const [dados, setDados] = useState({});
   const [dogSaved, setDogSaved] = useState(false);
 
   async function getDog() {
