@@ -4,8 +4,8 @@
 
 <p align="justify">Aplicação em React onde consumo os dados da Dog API, o usúario poderá escolher um dog da tela ou filtrar por raças e escolher um nome para o dog, estilizar a fonte e a cor (nome) e salvar podendo depois ver todos os seus dogs salvos. </p>
 
-## Deploy no Netlify: 
-https://fun-dog.netlify.app/
+## Deploy: 
+https://amandagdev.github.io/
 
 ## Libs utilizadas 
 - [X] React 
