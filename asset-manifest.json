@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/fun-dog/static/css/main.45fa616e.chunk.css",
-    "main.js": "/fun-dog/static/js/main.cf865194.chunk.js",
-    "main.js.map": "/fun-dog/static/js/main.cf865194.chunk.js.map",
+    "main.js": "/fun-dog/static/js/main.e8819db5.chunk.js",
+    "main.js.map": "/fun-dog/static/js/main.e8819db5.chunk.js.map",
     "runtime-main.js": "/fun-dog/static/js/runtime-main.cf291f19.js",
     "runtime-main.js.map": "/fun-dog/static/js/runtime-main.cf291f19.js.map",
-    "static/js/2.d8602315.chunk.js": "/fun-dog/static/js/2.d8602315.chunk.js",
-    "static/js/2.d8602315.chunk.js.map": "/fun-dog/static/js/2.d8602315.chunk.js.map",
+    "static/js/2.8ce97852.chunk.js": "/fun-dog/static/js/2.8ce97852.chunk.js",
+    "static/js/2.8ce97852.chunk.js.map": "/fun-dog/static/js/2.8ce97852.chunk.js.map",
     "index.html": "/fun-dog/index.html",
-    "precache-manifest.3ffc4efdef7cf73b95cc0d43da245d02.js": "/fun-dog/precache-manifest.3ffc4efdef7cf73b95cc0d43da245d02.js",
+    "precache-manifest.b7fef21b0f2a898c944a11856b2bf922.js": "/fun-dog/precache-manifest.b7fef21b0f2a898c944a11856b2bf922.js",
     "service-worker.js": "/fun-dog/service-worker.js",
     "static/css/main.45fa616e.chunk.css.map": "/fun-dog/static/css/main.45fa616e.chunk.css.map",
-    "static/js/2.d8602315.chunk.js.LICENSE.txt": "/fun-dog/static/js/2.d8602315.chunk.js.LICENSE.txt",
+    "static/js/2.8ce97852.chunk.js.LICENSE.txt": "/fun-dog/static/js/2.8ce97852.chunk.js.LICENSE.txt",
     "static/media/logo.PNG": "/fun-dog/static/media/logo.f37ed8f3.PNG"
   },
   "entrypoints": [
     "static/js/runtime-main.cf291f19.js",
-    "static/js/2.d8602315.chunk.js",
+    "static/js/2.8ce97852.chunk.js",
     "static/css/main.45fa616e.chunk.css",
-    "static/js/main.cf865194.chunk.js"
+    "static/js/main.e8819db5.chunk.js"
   ]
 }
