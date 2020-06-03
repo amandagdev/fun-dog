@@ -11,6 +11,7 @@ https://amandagdev.github.io/fun-dog/
 - [X] React 
 - [X] React Router Dom
 - [X] Axios
+- [X] React Icons
 
 
 > Status do Projeto: Em Desenvolvimento :warning:
