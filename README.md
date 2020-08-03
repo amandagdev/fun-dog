@@ -14,7 +14,7 @@ https://amandagdev.github.io/fun-dog/
 - [X] React Icons
 
 
-> Status do Projeto: Em Desenvolvimento :warning:
+> Status do Projeto: Finalizado :heavy_check_mark:
 
 
 ## Como rodar a aplicação
